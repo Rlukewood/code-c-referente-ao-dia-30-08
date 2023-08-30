@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Definição das cores ANSI
+#define RESET_COLOR "\033[0m"
+#define TEXT_COLOR_RED "\033[31m"
+#define TEXT_COLOR_GREEN "\033[32m"
+#define BACKGROUND_COLOR_YELLOW "\033[43m"
+#define BACKGROUND_COLOR_BLUE "\033[44m"
+
+int main() {
+    // Definir cores para o texto e fundo
+    printf(TEXT_COLOR_GREEN BACKGROUND_COLOR_BLUE);
+
+    // Solicitar informações
+    char nome[50];
+    char sexo;
+    int idade;
+
+    printf("Cadastro de Pessoa\n");
+    printf("==================\n");
+
+    printf("Nome: ");
+    scanf("%s", nome);
+
+    printf("Sexo (M/F): ");
+    scanf(" %c", &sexo);
+
+    printf("Idade: ");
+    scanf("%d", &idade);
+
+    // Restaurar cores padrão
+    printf(RESET_COLOR);
+
+    // Exibir informações cadastradas
+    printf("\nInformações Cadastradas:\n");
+    printf("========================\n");
+    printf("Nome: %s\n", nome);
+    printf("Sexo: %c\n", sexo);
+    printf("Idade: %d\n", idade);
+
+    return 0;
+}
+
